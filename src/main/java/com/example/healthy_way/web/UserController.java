@@ -17,4 +17,10 @@ public class UserController {
     public String errorLogin() {
         return "login-error";
     }
+
+    @GetMapping("/register")
+    public String register() {
+
+        return "register";
+    }
 }
