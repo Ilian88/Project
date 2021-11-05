@@ -26,19 +26,18 @@
     </head>
     <body class="text-center m-auto">
 
-    <main class="form-signin container">
-        <form class="row mt-5">
+    <main class="form-signin container" >
+        <form class="row mt-5" >
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating my-3">
-                <input type="email" class="form-control col-lg-4" id="floatingInput" placeholder="name@example.com">
+                <input th:field="${loginBindingModel.email}" th:errorclass="bg-danger" type="email" class="form-control col-lg-4" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating my-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input th:field="${loginBindingModel.password}" th:errorclass="bg-danger" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
-
 
             <div class="checkbox mb-3">
                 <label>

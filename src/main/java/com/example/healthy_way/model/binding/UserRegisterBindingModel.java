@@ -10,6 +10,8 @@ public class UserRegisterBindingModel {
 
     private String password;
 
+    private String confirmPassword;
+
     private String email;
 
     private Integer age;
@@ -21,7 +23,7 @@ public class UserRegisterBindingModel {
 
     @NotNull
     @NotBlank
-    @Size(min = 3,max = 15)
+    @Size(min = 3, max = 15)
     public String getUsername() {
         return username;
     }
@@ -33,7 +35,7 @@ public class UserRegisterBindingModel {
 
     @NotNull
     @NotBlank
-    @Size(min = 3,max = 12)
+    @Size(min = 3, max = 12)
     public String getPassword() {
         return password;
     }
@@ -73,5 +75,18 @@ public class UserRegisterBindingModel {
     public UserRegisterBindingModel setGender(String gender) {
         this.gender = gender;
         return this;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public UserRegisterBindingModel setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+        return this;
+    }
+
+    public boolean passwordsMatch() {
+        return this.password.equals(this.confirmPassword);
     }
 }
